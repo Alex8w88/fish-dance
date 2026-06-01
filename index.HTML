@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fish Dance</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #f7f5ef;
+      color: #222;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+    }
+
+    video {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 14px;
+      background: #e9e5dc;
+    }
+
+    p {
+      margin-top: 18px;
+      font-size: 1.5rem;
+      line-height: 1.3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <video autoplay loop muted playsinline>
+      <source src="fishdance.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <p id="randomText">please take me fishing</p>
+  </div>
+
+  <script>
+    const phrases = [
+      "please take me fishing",
+      "kesh can't swim",
+      "fish want me",
+      "anexperience fishing when?",
+      "fairly feral fishing",
+      "i want to drink beer by a pond",
+      "quack",
+      "we are the cheeky fish",
+      "i've never been fishing",
+      "fish dance fish dance"
+    ];
+
+    const randomIndex = Math.floor(Math.random() * phrases.length);
+    document.getElementById("randomText").textContent = phrases[randomIndex];
+  </script>
+</body>
+</html>
